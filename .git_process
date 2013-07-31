@@ -1,0 +1,35 @@
+==============================
+PUSH
+==============================
+git add . -A
+git commit -m 'commit message'
+git pull origin master
+git reset --hard HEAD
+git push origin master:andrew
+
+==============================
+PULL
+==============================
+git status
+git remote update -p
+gc origin/master
+git branch -d master
+git checkout -b master
+git branch
+git lg
+
+
+==============================
+THINKING SPHINX
+==============================
+rake db:start && rake ts:rebuild
+
+rake ts:clear                          # Clear out Sphinx files
+rake ts:configure                      # Generate the Sphinx configuration file
+rake ts:generate                       # Generate fresh index files for real-time indices
+rake ts:index                          # Generate the Sphinx configuration file and process all indices
+rake ts:rebuild                        # Stop Sphinx, index and then restart Sphinx
+rake ts:regenerate                     # Stop Sphinx, clear files, reconfigure, start Sphinx, generate files
+rake ts:restart                        # Restart the Sphinx daemon
+rake ts:start                          # Start the Sphinx daemon
+rake ts:stop                           # Stop the Sphinx daemon
